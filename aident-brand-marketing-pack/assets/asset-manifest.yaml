@@ -1,0 +1,35 @@
+schema_version: 2
+pack_version: 0.2.0
+updated_at: ""
+brand_name: ""
+
+assets: []
+
+# Add one record per independently reviewable deliverable.
+# - id: visual-linkedin-launch-01
+#   parent_id: ""
+#   module: visual-spec
+#   purpose: launch announcement
+#   audience: product leaders
+#   channel: linkedin
+#   locale: en
+#   format: static-image
+#   specification: assets/visual-linkedin-launch-01.yaml
+#   dimensions_or_duration: 1200x627
+#   evidence_dependencies: [FACT-001]
+#   copy_dependencies: [copy-linkedin-launch-01]
+#   source_asset_dependencies: [logo-primary-light]
+#   source_or_output: ""
+#   rights: approved-first-party
+#   owner: ""
+#   approval_owner: ""
+#   status: production-ready-brief
+#   production_handoff:
+#     handoff_id: ""
+#     brief_version: ""
+#     external_workflow: ""
+#   qa:
+#     result: pending
+#     checked_at: ""
+#     notes: ""
+#   reuse_notes: ""

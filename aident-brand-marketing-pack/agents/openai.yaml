@@ -1,0 +1,7 @@
+interface:
+  display_name: "Aident Brand Marketing Pack"
+  short_description: "Write sourced copy and specify reusable visual and video asset packs."
+  default_prompt: "Use $aident-brand-marketing-pack to turn this brand information or official URL into an evidence-backed copy library, asset inventory, and production-ready visual or video briefs. Do not render media."
+
+policy:
+  allow_implicit_invocation: true

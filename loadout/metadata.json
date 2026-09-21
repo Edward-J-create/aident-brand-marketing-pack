@@ -1,18 +1,19 @@
 {
   "schemaVersion": "0.1.0",
-  "displayName": "Brand Marketing Pack Builder",
-  "summary": "Turn brand notes, official URLs, social profiles, and existing assets into a sourced, modular copy, image, and video content library with an editable document deliverable.",
+  "displayName": "Aident Brand Marketing Pack",
+  "summary": "Create evidence-backed brand copy, reusable asset inventories, and production-ready visual and video briefs with explicit provenance and quality gates.",
   "language": "en",
   "category": "marketing",
   "tags": [
-    "brand",
-    "marketing",
-    "content",
-    "assets",
+    "aident",
+    "brand-marketing",
+    "marketing-assets",
     "copywriting",
-    "image",
-    "video",
-    "research",
+    "content-library",
+    "creative-brief",
+    "asset-governance",
+    "visual-brief",
+    "video-brief",
     "editable-docs"
   ],
   "references": [
@@ -23,11 +24,7 @@
     {"type": "action", "name": "composio:googledocs_tools:googledocs_create_document_markdown", "required": false},
     {"type": "action", "name": "composio:googledocs_tools:googledocs_get_document_plaintext", "required": false},
     {"type": "action", "name": "composio:notion_tools:notion_create_notion_page", "required": false},
-    {"type": "action", "name": "composio:notion_tools:notion_get_page_markdown", "required": false},
-    {"type": "action", "name": "direct:fal:fal_list_text_to_image_models", "required": false},
-    {"type": "action", "name": "direct:fal:fal_list_text_to_video_models", "required": false},
-    {"type": "action", "name": "direct:fal:fal_text_to_image", "required": false},
-    {"type": "action", "name": "direct:fal:fal_text_to_video", "required": false}
+    {"type": "action", "name": "composio:notion_tools:notion_get_page_markdown", "required": false}
   ],
-  "idempotencyKey": "build-brand-marketing-pack-v1"
+  "idempotencyKey": "aident-brand-marketing-pack-v2"
 }

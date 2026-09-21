@@ -1,4 +1,4 @@
-schema_version: 1
+schema_version: 2
 
 brand:
   name: Example Brand
@@ -6,8 +6,9 @@ brand:
     - https://example.com
   official_social_profiles: []
   source_documents: []
+  existing_asset_locations: []
   primary_market: Singapore
-  primary_language: en
+  primary_locale: en-SG
 
 request:
   profile: copy-pack
@@ -21,7 +22,7 @@ request:
   channels:
     - linkedin
   locales:
-    - en
+    - en-SG
   campaign_goal: Product launch
   desired_action: Visit the product page
   destination: local-markdown
@@ -30,20 +31,23 @@ deliverables:
   copy:
     - company introduction
     - launch post
-  images: []
-  videos: []
+  inventory: []
+  visual_briefs: []
+  video_briefs: []
 
-constraints:
+governance:
+  owner: Example Brand marketing
+  approval_owner: Example Brand marketing lead
   approved_claims: []
   prohibited_claims: []
   approved_terms: []
   discouraged_terms: []
   existing_visual_rules: []
-  generation_budget_approved: false
-  notes: Do not add other channels, images, or videos.
+  external_production_authorized: false
+  notes: Do not add other channels, visuals, or videos.
 
 run:
-  pack_version: 0.1.0
-  retrieval_date: ""
+  pack_version: 0.2.0
+  source_cutoff_date: ""
   assumptions: []
   unresolved_questions: []

@@ -10,7 +10,7 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
-PACKAGE = ROOT / "build-brand-marketing-pack"
+PACKAGE = ROOT / "aident-brand-marketing-pack"
 SKILL = PACKAGE / "SKILL.md"
 METADATA = ROOT / "loadout" / "metadata.json"
 ALLOWED_EXTENSIONS = {".md", ".txt", ".json", ".yaml", ".yml"}
@@ -19,10 +19,23 @@ MAX_PACKAGE_BYTES = 256 * 1024
 MAX_SKILL_BYTES = 32 * 1024
 ACTION_PATTERN = re.compile(r"<action-tag>([^<]+)</action-tag>")
 LOCAL_LINK_PATTERN = re.compile(r"\[[^\]]+\]\(([^)]+)\)")
+HTML_PATTERN = re.compile(r"<(?!/?action-tag\b)[A-Za-z][^>]*>")
+BANNED_MEDIA_ACTION_FRAGMENTS = ("fal_", "text_to_image", "text_to_video", "image_generation", "video_generation")
 
 
 def fail(errors: list[str], message: str) -> None:
     errors.append(message)
+
+
+def validate_yaml_when_available(path: Path, errors: list[str]) -> None:
+    try:
+        import yaml  # type: ignore
+    except ImportError:
+        return
+    try:
+        yaml.safe_load(path.read_text(encoding="utf-8"))
+    except Exception as exc:
+        fail(errors, f"Invalid YAML in {path.relative_to(ROOT)}: {exc}")
 
 
 def main() -> int:
@@ -39,8 +52,8 @@ def main() -> int:
 
     if not skill_text.startswith("---\n"):
         fail(errors, "SKILL.md must start with YAML frontmatter")
-    if "name: build-brand-marketing-pack" not in frontmatter:
-        fail(errors, "SKILL.md name must be build-brand-marketing-pack")
+    if "name: aident-brand-marketing-pack" not in frontmatter:
+        fail(errors, "SKILL.md name must be aident-brand-marketing-pack")
     if "description:" not in frontmatter:
         fail(errors, "SKILL.md frontmatter must include description")
 
@@ -67,6 +80,11 @@ def main() -> int:
             continue
         if re.search(r"\b(?:TODO|TBD|FIXME)\b", text, flags=re.IGNORECASE):
             fail(errors, f"Unresolved placeholder in {relative}")
+        if path.suffix.lower() == ".md" and HTML_PATTERN.search(text):
+            fail(errors, f"Unsupported HTML-like tag in {relative}")
+
+        if path.suffix.lower() in {".yaml", ".yml"}:
+            validate_yaml_when_available(path, errors)
 
         if path.suffix.lower() == ".md":
             for target in LOCAL_LINK_PATTERN.findall(text):
@@ -81,6 +99,9 @@ def main() -> int:
     references = sorted(ref.get("name") for ref in metadata.get("references", []))
     if tags != references:
         fail(errors, "SKILL.md action tags do not exactly match metadata references")
+    for tag in tags:
+        if any(fragment in tag.lower() for fragment in BANNED_MEDIA_ACTION_FRAGMENTS):
+            fail(errors, f"Media-generation action is outside this Skill's boundary: {tag}")
 
     return report(errors, len(files), package_bytes, len(tags))
 
