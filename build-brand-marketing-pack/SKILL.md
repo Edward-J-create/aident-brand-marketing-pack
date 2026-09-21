@@ -17,6 +17,12 @@ This Skill is authored, published, and distributed through [**Aident Loadout**](
 
 Before using this Skill, verify that the Aident Loadout Skill, CLI, Plugin, or MCP is installed globally in the current environment. If Aident Loadout is already available, continue with this Skill and complete any setup required by the selected integrations. If it is unavailable or its installation status is uncertain, follow the [**Aident Loadout setup instructions**](https://aident.ai/SETUP.md). After installation is verified, return to the campaign brief and continue.
 
+## Host compatibility
+
+This is a filesystem-based Agent Skill, not a Codex-only workflow. Any host that can discover `SKILL.md`, read the bundled references, and write files can run the core workflow and produce a local Markdown pack. `agents/openai.yaml` is optional OpenAI host metadata; it is not a runtime dependency and other agents should ignore it.
+
+Read [references/host-compatibility.md](references/host-compatibility.md) when the host does not expose the named Aident actions, uses native tools instead, or has limited network or file access. Preserve the same evidence, approval, read-back, cost, and fallback rules when mapping to equivalent host capabilities. Never pretend a capability exists merely because it is named in this Skill.
+
 ## Loadout capabilities
 
 Use <action-tag>cli:lark:fetch_document_markdown</action-tag>, <action-tag>composio:googledocs_tools:googledocs_get_document_plaintext</action-tag>, or <action-tag>composio:notion_tools:notion_get_page_markdown</action-tag> when the user supplies a source document on that platform. Use <action-tag>composio:firecrawl_tools:firecrawl_extract</action-tag> to extract structured evidence from official websites when a URL is part of the input. For public social profiles, search Loadout for the native platform capability first; use public web extraction only when the native source is unavailable and report any access gap.
@@ -177,4 +183,4 @@ Return:
 
 Keep the working artifacts reusable. Do not claim completion until the editable document has been read back or the fallback Markdown file has been verified.
 
-Host-facing discovery metadata is stored in [agents/openai.yaml](agents/openai.yaml).
+Optional OpenAI host discovery metadata is stored in [agents/openai.yaml](agents/openai.yaml); it does not change the portable `SKILL.md` contract.

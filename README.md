@@ -21,17 +21,50 @@ The agent selects the smallest useful module set instead of generating a large p
 
 Scope and execution mode are separate. Library mode creates reviewed copy and production briefs without paid media calls. Production mode generates only the exact approved image or video deliverables. Refresh mode preserves stable approvals and revisits changed evidence.
 
+## Agent compatibility
+
+This repository follows the open, filesystem-based Agent Skills layout: a skill directory with `SKILL.md`, progressively loaded references, and reusable assets. It is not tied to Codex or to one model.
+
+The package can be installed in Codex, Claude Code, Cursor, OpenCode, Gemini CLI, GitHub Copilot, and other environments that support Agent Skills. The [`agents/openai.yaml`](build-brand-marketing-pack/agents/openai.yaml) file is only optional OpenAI discovery metadata; other hosts can ignore it.
+
+Compatibility has two levels:
+
+| Level | Requirement | Available result |
+|---|---|---|
+| Portable core | Read `SKILL.md` and bundled files; write a local file | Scope selection, research from supplied files, copy, image/video briefs, manifest, local Markdown |
+| Connected production | Web/provider/media tools through Aident Loadout or equivalent native capabilities | Live website research, Lark/Google Docs/Notion delivery, generated images or video |
+
+Missing provider access degrades to a verified Markdown master or production brief. It must not cause fabricated research, silent provider switching, or a false claim that media was generated.
+
 ## Install
 
-Copy the [`build-brand-marketing-pack`](build-brand-marketing-pack/) directory into the skills directory used by your agent environment.
+The simplest cross-agent installation uses the [open `skills` CLI](https://github.com/vercel-labs/skills):
 
-For Codex, a typical location is:
-
-```text
-~/.codex/skills/build-brand-marketing-pack
+```bash
+npx skills add Edward-J-create/brand-marketing-pack-skill --skill build-brand-marketing-pack
 ```
 
-The Skill can always deliver a local Markdown pack. Lark, Google Docs, Notion, website extraction, and media generation use Aident Loadout capabilities and require the relevant connection or credit approval. Follow the [Aident Loadout setup instructions](https://aident.ai/SETUP.md) when those actions are needed.
+The installer lets the user choose one or more detected Agent environments. A non-interactive global example is:
+
+```bash
+npx skills add Edward-J-create/brand-marketing-pack-skill \
+  --skill build-brand-marketing-pack \
+  --global \
+  --agent codex claude-code cursor opencode \
+  --yes
+```
+
+For manual installation, copy the complete [`build-brand-marketing-pack`](build-brand-marketing-pack/) directory—not only `SKILL.md`—to the host's personal or project Skill directory:
+
+| Host | Example personal directory |
+|---|---|
+| Codex | `~/.codex/skills/build-brand-marketing-pack/` |
+| Claude Code | `~/.claude/skills/build-brand-marketing-pack/` |
+| Gemini CLI | `~/.gemini/skills/build-brand-marketing-pack/` or `~/.agents/skills/build-brand-marketing-pack/` |
+| OpenCode | `~/.config/opencode/skills/build-brand-marketing-pack/` or `~/.agents/skills/build-brand-marketing-pack/` |
+| GitHub Copilot | `~/.copilot/skills/build-brand-marketing-pack/` or `~/.agents/skills/build-brand-marketing-pack/` |
+
+The Skill can always deliver a local Markdown pack. Lark, Google Docs, Notion, website extraction, and media generation use Aident Loadout capabilities or equivalent host-native tools and require the relevant connection or credit approval. Follow the [Aident Loadout setup instructions](https://aident.ai/SETUP.md) when those routes are selected.
 
 ## Example requests
 
@@ -69,6 +102,7 @@ build-brand-marketing-pack/
     ├── copy-module.md
     ├── evidence-and-research.md
     ├── image-module.md
+    ├── host-compatibility.md
     ├── output-template.md
     ├── quality-gates.md
     ├── scope-and-modules.md
