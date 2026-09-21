@@ -14,7 +14,7 @@ Do not block these outputs because a connector is unavailable. Narrow the eviden
 |---|---|---|---|
 | Read official URL | Aident website extraction | Native web fetch, browser, or approved connector | Record URL, retrieval date, status, and access gaps |
 | Read Lark, Google Docs, or Notion | Matching Aident read action | Native authenticated connector | Never infer inaccessible private content |
-| Create editable cloud document | Matching Aident create action | Native provider action | Create one requested destination and read it back |
+| Create editable cloud document | Matching Aident create action, after current Vault check | Native provider action only when Aident is unavailable or cannot perform it | Create one native document and read it back; disclose any route change |
 | Insert existing approved image in Lark | Aident Lark image action | Native document image insertion | Preserve rights and source record; verify placement |
 | Deliver locally | File write | Any host file tool | Verify the Markdown file exists and is readable |
 | Produce final media | Separate user-selected production workflow | Any authorized production Skill or tool | Use frozen brief; return outputs and QA; never run implicitly |

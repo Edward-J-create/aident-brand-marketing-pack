@@ -74,7 +74,7 @@ Actual Figma layouts, Canvas code, image-model recipes, motion components, editi
 - Visual and video copy remains independently reviewable.
 - Logo files, product UI, footage, rights, and approval ownership are explicit.
 - Prompts, concepts, scripts, and storyboards are never labeled as delivered media.
-- Lark, Google Docs, and Notion deliveries are read back before verification; local Markdown is a working backup, not the default final artifact.
+- Aident Loadout is the primary document route: check the current account, action, and Vault connection, create a native Lark Docx / Google Doc / Notion page, then read it back. Local Markdown is only a working backup.
 - A full pack does not silently collapse to copy-only because images or footage are missing.
 - Explicitly narrow requests stay narrow.
 
@@ -101,7 +101,7 @@ npx skills add Edward-J-create/aident-brand-marketing-pack \
 
 For manual installation, copy the complete package directory—not only `SKILL.md`—to the host's personal or project Skill directory. Hosts may ignore [`agents/openai.yaml`](aident-brand-marketing-pack/agents/openai.yaml); it is optional discovery metadata.
 
-The portable core can draft a local Markdown pack from accessible inputs. Connected Lark, Google Docs, Notion, and website extraction use Aident Loadout capabilities or equivalent host-native tools. The default result requires a connected editable document provider; if none is available, the Skill reports online delivery incomplete rather than silently downgrading to a local file. Follow the [Aident Loadout setup instructions](https://aident.ai/SETUP.md) when a connection is needed.
+The portable core can draft content from accessible inputs, but a default run is not complete until Aident Loadout creates and reads back an editable online document. Use a host-native connector only when Aident cannot perform the requested operation, and disclose the route change. A connected/readable Lark account may still lack app-level Docx creation scopes; in that case the Skill checks another connected provider if the user did not require Lark. If none can write, it reports online delivery incomplete rather than silently downgrading to a local file. Follow the [Aident Loadout setup instructions](https://aident.ai/SETUP.md) when a connection is needed.
 
 ## Example requests
 
@@ -122,7 +122,7 @@ concepts honestly, and create an editable online document.
 ```text
 Use $aident-brand-marketing-pack to build an English copy pack from our website.
 Include only the website one-liner, LinkedIn launch post, and three ad variants.
-Deliver a local Markdown file and show the evidence behind factual claims.
+Deliver an editable Google Doc through Aident Loadout and show the evidence behind factual claims.
 ```
 
 ```text

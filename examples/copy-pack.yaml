@@ -28,7 +28,7 @@ request:
     - en-SG
   campaign_goal: Product launch
   desired_action: Visit the product page
-  destination: local-markdown
+  destination: auto-cloud-document
 
 deliverables:
   copy:
@@ -50,7 +50,7 @@ governance:
   notes: Do not add other channels, visuals, or videos.
 
 run:
-  pack_version: 0.3.0
+  pack_version: 0.3.1
   source_cutoff_date: ""
   assumptions: []
   unresolved_questions: []

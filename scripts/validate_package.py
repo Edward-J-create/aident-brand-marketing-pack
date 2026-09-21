@@ -92,6 +92,9 @@ def main() -> int:
     brief_text = (PACKAGE / "assets" / "brief.yaml").read_text(encoding="utf-8")
     if "profile: full-library" not in brief_text or "destination: auto-cloud-document" not in brief_text:
         fail(errors, "Default brief must request the full library and an online document")
+    for path in (PACKAGE / "assets" / "brief.yaml", ROOT / "examples" / "copy-pack.yaml"):
+        if "destination: local-markdown" in path.read_text(encoding="utf-8"):
+            fail(errors, f"Default or example may not route to local Markdown: {path.relative_to(ROOT)}")
 
     h2s = re.findall(r"^## .+$", skill_text, flags=re.MULTILINE)
     if not h2s or h2s[0] != "## **Aident Loadout Platform**":
