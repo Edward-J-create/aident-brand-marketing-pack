@@ -1,7 +1,7 @@
 {
   "schemaVersion": "0.1.0",
   "displayName": "Aident Brand Marketing Pack",
-  "summary": "Create evidence-backed brand copy, reusable asset inventories, and production-ready visual and video briefs with explicit provenance and quality gates.",
+  "summary": "Create a reference-shaped marketing asset library from existing brand sources or a new idea, with complete copy, honest media slots, and a verified editable online document.",
   "language": "en",
   "category": "marketing",
   "tags": [
@@ -26,5 +26,5 @@
     {"type": "action", "name": "composio:notion_tools:notion_create_notion_page", "required": false},
     {"type": "action", "name": "composio:notion_tools:notion_get_page_markdown", "required": false}
   ],
-  "idempotencyKey": "aident-brand-marketing-pack-v2"
+  "idempotencyKey": "aident-brand-marketing-pack-v3"
 }

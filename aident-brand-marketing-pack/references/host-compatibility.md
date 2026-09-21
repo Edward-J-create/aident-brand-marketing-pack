@@ -4,7 +4,7 @@ Use this reference when the current Agent host does not expose the exact Aident 
 
 ## Portable core
 
-With only the Skill files and a writable location, an agent can perform scope selection, brief normalization, evidence work from supplied material, brand core creation, final copy, asset inventory, visual and video briefs, manifests, quality checks, and local Markdown delivery.
+With only the Skill files and a writable location, an agent can perform scope selection, brief normalization, evidence work from supplied material, brand core creation, final copy, asset inventory, visual and video briefs, manifests, quality checks, and local Markdown drafting. This is not equivalent to the default online-document delivery.
 
 Do not block these outputs because a connector is unavailable. Narrow the evidence base and disclose the gap.
 
@@ -25,10 +25,10 @@ Equivalent tools are interchangeable only at the capability level. Inspect the l
 
 1. If public research is unavailable, use supplied material and mark unsupported external facts as unknown.
 2. If a private document is inaccessible, request an export or permission; do not reconstruct it from hints.
-3. If a cloud provider is unavailable, preserve the verified Markdown master.
+3. If no cloud provider is writable, preserve the Markdown draft but mark online delivery incomplete and ask for a connection or explicit local-only change of scope.
 4. If read-back is unavailable, do not report cloud delivery as verified.
 5. If no production workflow is available, deliver the complete brief and label media as not produced.
-6. If files cannot persist, return complete Markdown in the conversation and disclose that no durable library was created.
+6. If files cannot persist, return complete Markdown in the conversation and disclose that neither an online document nor a durable local library was created.
 
 ## Host-specific metadata
 

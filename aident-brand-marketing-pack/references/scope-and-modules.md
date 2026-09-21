@@ -1,6 +1,6 @@
 # Scope and Modules
 
-Choose a profile before drafting. Add or remove modules only when the request makes that necessary.
+Choose the input route (`source-led` or `idea-led`) first, then the scope profile. A request for a "brand pack", "marketing assets", or this Skill without a narrow deliverable defaults to `full-library`. Missing source media do not narrow the scope. Add or remove modules only when the user explicitly limits the deliverable.
 
 | Profile | Modules | Minimum result |
 |---|---|---|
@@ -10,7 +10,7 @@ Choose a profile before drafting. Add or remove modules only when the request ma
 | `visual-kit` | core, copy when text is present, inventory, visual-spec, delivery | Selected static-asset briefs and all dependent copy |
 | `video-kit` | core, copy, inventory, video-spec, delivery | Selected video briefs, scripts, on-screen copy, and shot plans |
 | `campaign-kit` | core, copy, optional inventory, selected spec modules, delivery | One campaign system, not an evergreen library dump |
-| `full-library` | all relevant modules | Complete reusable library with manifests and gaps |
+| `full-library` | core, copy, inventory, visual-spec, video-spec, requested localization, delivery | Reference-shaped bilingual-ready document, actual media inventory, briefs for gaps, manifest and evidence appendix |
 | `refresh` | affected modules, delivery | Diff-led update that preserves stable approvals |
 
 ## Granularity rules
@@ -19,7 +19,8 @@ Choose a profile before drafting. Add or remove modules only when the request ma
 - One channel, locale, or aspect-ratio variant may be a child of a master asset; do not duplicate the full strategy in every child.
 - A logo lockup, banner, poster, ad unit, social card, carousel, thumbnail, video master, cutdown, and subtitle file are distinct deliverables when they can be approved or delivered separately.
 - Keep copy as separate assets even when destined for an image or video.
-- Do not create empty sections for unselected modules.
+- In the default `full-library`, retain every category in the reference blueprint. Use `Missing`, `Proposed`, or `Not applicable — reason` instead of an empty section.
+- In an explicitly focused profile, omit unrelated categories and state that the result is not a complete reference-shaped pack.
 - Do not treat a list of prompts as a visual kit unless each prompt is attached to a complete brief.
 
 ## Mode rules
@@ -41,11 +42,12 @@ Compare source dates and manifest states. Revalidate changed facts, identify dep
 At the start of substantive work, state:
 
 ```text
-Profile: {profile}
+Input route: {source-led | idea-led}
+Profile: {full-library by default, or explicit focused profile}
 Mode: {library | handoff | refresh}
 Modules: {selected modules}
 Locales: {selected locales}
 Channels: {selected channels}
-Destination: {one destination}
+Destination: {connected editable cloud document; provider or connection status}
 Excluded: {explicit exclusions}
 ```

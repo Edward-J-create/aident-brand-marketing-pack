@@ -21,6 +21,27 @@ ACTION_PATTERN = re.compile(r"<action-tag>([^<]+)</action-tag>")
 LOCAL_LINK_PATTERN = re.compile(r"\[[^\]]+\]\(([^)]+)\)")
 HTML_PATTERN = re.compile(r"<(?!/?action-tag\b)[A-Za-z][^>]*>")
 BANNED_MEDIA_ACTION_FRAGMENTS = ("fal_", "text_to_image", "text_to_video", "image_generation", "video_generation")
+REQUIRED_DEFAULT_MARKERS = (
+    "`full-library`",
+    "source-led",
+    "idea-led",
+    "one real editable cloud document",
+    "reference-pack-blueprint.md",
+    "document-delivery.md",
+)
+REQUIRED_PACK_SECTIONS = (
+    "English Copy",
+    "Official Links and Social Channels",
+    "Brand Assets",
+    "Launch Video",
+    "Video Clips Assets",
+    "The Creative Rule",
+    "Platform Template References",
+    "Workflow Ideas",
+    "Accuracy Guardrails",
+    "中文 copy",
+    "中文素材",
+)
 
 
 def fail(errors: list[str], message: str) -> None:
@@ -56,6 +77,21 @@ def main() -> int:
         fail(errors, "SKILL.md name must be aident-brand-marketing-pack")
     if "description:" not in frontmatter:
         fail(errors, "SKILL.md frontmatter must include description")
+
+    for marker in REQUIRED_DEFAULT_MARKERS:
+        if marker not in skill_text:
+            fail(errors, f"Missing default pack contract marker: {marker}")
+    blueprint = PACKAGE / "references" / "reference-pack-blueprint.md"
+    if not blueprint.is_file():
+        fail(errors, "Missing reference-pack blueprint")
+    else:
+        blueprint_text = blueprint.read_text(encoding="utf-8")
+        for section in REQUIRED_PACK_SECTIONS:
+            if section not in blueprint_text:
+                fail(errors, f"Reference-pack blueprint omits {section}")
+    brief_text = (PACKAGE / "assets" / "brief.yaml").read_text(encoding="utf-8")
+    if "profile: full-library" not in brief_text or "destination: auto-cloud-document" not in brief_text:
+        fail(errors, "Default brief must request the full library and an online document")
 
     h2s = re.findall(r"^## .+$", skill_text, flags=re.MULTILINE)
     if not h2s or h2s[0] != "## **Aident Loadout Platform**":

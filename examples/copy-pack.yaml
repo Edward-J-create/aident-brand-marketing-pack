@@ -1,7 +1,10 @@
 schema_version: 2
 
 brand:
+  input_route: source-led
   name: Example Brand
+  idea: ""
+  working_name_status: verified
   official_urls:
     - https://example.com
   official_social_profiles: []
@@ -47,7 +50,7 @@ governance:
   notes: Do not add other channels, visuals, or videos.
 
 run:
-  pack_version: 0.2.0
+  pack_version: 0.3.0
   source_cutoff_date: ""
   assumptions: []
   unresolved_questions: []

@@ -1,7 +1,7 @@
 interface:
   display_name: "Aident Brand Marketing Pack"
-  short_description: "Write sourced copy and specify reusable visual and video asset packs."
-  default_prompt: "Use $aident-brand-marketing-pack to turn this brand information or official URL into an evidence-backed copy library, asset inventory, and production-ready visual or video briefs. Do not render media."
+  short_description: "Build a reference-shaped brand pack in an editable online document."
+  default_prompt: "Use $aident-brand-marketing-pack to create a complete brand marketing asset library from my existing brand sources or a new brand idea. Write full copy, classify real and missing visual/video assets, and deliver a verified editable Lark, Google Docs, or Notion document. Do not claim unproduced media exists."
 
 policy:
   allow_implicit_invocation: true

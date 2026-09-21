@@ -1,7 +1,10 @@
 schema_version: 2
 
 brand:
+  input_route: source-led # source-led | idea-led
   name: ""
+  idea: ""
+  working_name_status: "" # verified | proposed | not-applicable
   official_urls: []
   official_social_profiles: []
   source_documents: []
@@ -10,17 +13,21 @@ brand:
   primary_locale: ""
 
 request:
-  profile: snapshot
+  profile: full-library
   mode: library
   modules:
     - core
+    - copy
+    - inventory
+    - visual-spec
+    - video-spec
     - delivery
   audiences: []
   channels: []
   locales: []
   campaign_goal: ""
   desired_action: ""
-  destination: local-markdown
+  destination: auto-cloud-document # named provider or auto-cloud-document
 
 deliverables:
   copy: []
@@ -40,7 +47,7 @@ governance:
   notes: ""
 
 run:
-  pack_version: 0.2.0
+  pack_version: 0.3.0
   source_cutoff_date: ""
   assumptions: []
   unresolved_questions: []

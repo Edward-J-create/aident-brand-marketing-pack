@@ -13,7 +13,9 @@ Do not invent every length independently. Compression must preserve audience, pr
 
 ## Reusable copy taxonomy
 
-Create only requested items:
+For an explicitly focused profile, create only requested items. For the default `full-library`, write every relevant row in [reference-pack-blueprint.md](reference-pack-blueprint.md), including measured 120–140, 200–250, 350–500, 600–900, and 1,000–1,200 character English descriptions when English is requested. If a length cannot be met without invented facts or padding, label the constraint unmet and explain why.
+
+Reusable items include:
 
 - descriptor, one-liner, short description, long description;
 - positioning statement, value proposition, message pillars, proof points;

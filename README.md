@@ -2,9 +2,18 @@
 
 # Aident Brand Marketing Pack
 
-An open, cross-agent Skill for turning brand notes, official sites, social profiles, documents, and existing media into an evidence-backed marketing source of truth.
+An open, cross-agent Skill for building a complete, editable brand marketing asset library from either an existing brand or a new brand idea. Its default document follows the category structure of the [Aident creator and influencer marketing pack]([redacted reference]), without copying that brand's content.
 
-It writes the actual copy. For visual and video assets, it creates precise production contracts—briefs, copy dependencies, formats, source requirements, rights, and quality gates—without pretending that a prompt is a finished design.
+It writes the actual copy. Existing approved images and videos are inventoried, embedded or linked where the provider allows; missing ones receive precise production briefs. It never pretends that a prompt, script, or storyboard is a finished file. By default the deliverable is a **verified editable Lark, Google Docs, or Notion document**, not merely local Markdown.
+
+## Two input routes
+
+| Route | User provides | Result |
+|---|---|---|
+| `source-led` | Brand name with introduction/logo, official URL/social profile, existing document, or assets | Source-grounded pack preserving real identity and linking approved assets |
+| `idea-led` | Product/brand idea without established identity or media | Proposed working brand, full copy and asset concepts, with nonexistent links/media clearly marked |
+
+A generic request defaults to `full-library`. The document includes English copy, official links and social channels, brand assets, launch video, video clips, creative rules, platform templates, workflow ideas, accuracy guardrails, and Chinese copy/media when requested. An explicitly narrow request may use a focused profile.
 
 ## The contract
 
@@ -46,7 +55,7 @@ This split is intentional. Stable brand governance should not be coupled to a fa
 | `visual-kit` | Static-asset briefs with dependent copy and source assets |
 | `video-kit` | Video concepts, scripts, shots, captions, and delivery contracts |
 | `campaign-kit` | One campaign across selected copy and media formats |
-| `full-library` | A complete reusable content and asset system |
+| `full-library` | Default reference-shaped content and asset document |
 | `refresh` | Evidence-aware updates that preserve stable approvals |
 
 Operating modes are separate: `library` builds the source of truth, `handoff` freezes production contracts, and `refresh` revises only affected records. None of them renders media.
@@ -65,8 +74,9 @@ Actual Figma layouts, Canvas code, image-model recipes, motion components, editi
 - Visual and video copy remains independently reviewable.
 - Logo files, product UI, footage, rights, and approval ownership are explicit.
 - Prompts, concepts, scripts, and storyboards are never labeled as delivered media.
-- Lark, Google Docs, and Notion deliveries are read back before verification.
-- Narrow requests do not silently expand into a full library.
+- Lark, Google Docs, and Notion deliveries are read back before verification; local Markdown is a working backup, not the default final artifact.
+- A full pack does not silently collapse to copy-only because images or footage are missing.
+- Explicitly narrow requests stay narrow.
 
 ## Cross-agent installation
 
@@ -91,9 +101,23 @@ npx skills add Edward-J-create/aident-brand-marketing-pack \
 
 For manual installation, copy the complete package directory—not only `SKILL.md`—to the host's personal or project Skill directory. Hosts may ignore [`agents/openai.yaml`](aident-brand-marketing-pack/agents/openai.yaml); it is optional discovery metadata.
 
-The portable core can always produce a local Markdown pack from accessible inputs. Connected Lark, Google Docs, Notion, and website extraction use Aident Loadout capabilities or equivalent host-native tools. Follow the [Aident Loadout setup instructions](https://aident.ai/SETUP.md) when those routes are selected.
+The portable core can draft a local Markdown pack from accessible inputs. Connected Lark, Google Docs, Notion, and website extraction use Aident Loadout capabilities or equivalent host-native tools. The default result requires a connected editable document provider; if none is available, the Skill reports online delivery incomplete rather than silently downgrading to a local file. Follow the [Aident Loadout setup instructions](https://aident.ai/SETUP.md) when a connection is needed.
 
 ## Example requests
+
+```text
+Use $aident-brand-marketing-pack to build the full marketing pack from our
+brand name, logo, introduction, and official website. Follow the reference
+category structure, use real existing assets, brief missing visuals/videos,
+and deliver one editable Lark document.
+```
+
+```text
+Use $aident-brand-marketing-pack for a new idea: matching accessories for
+people and pets. We have no name, logo, website, or media yet. Propose a
+working identity, write the full Chinese and English pack, label all media
+concepts honestly, and create an editable online document.
+```
 
 ```text
 Use $aident-brand-marketing-pack to build an English copy pack from our website.
@@ -127,12 +151,14 @@ aident-brand-marketing-pack/
 │   └── visual-brief.yaml
 └── references/
     ├── copy-module.md
+    ├── document-delivery.md
     ├── evidence-and-research.md
     ├── host-compatibility.md
     ├── image-module.md
     ├── output-template.md
     ├── production-handoff.md
     ├── quality-gates.md
+    ├── reference-pack-blueprint.md
     ├── scope-and-modules.md
     └── video-module.md
 ```

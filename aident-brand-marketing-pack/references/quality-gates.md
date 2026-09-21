@@ -4,7 +4,7 @@ Apply common gates plus gates for selected modules before delivery and after pro
 
 ## Common gates
 
-- Scope matches the selected profile; no unrequested channels or asset families were added.
+- Scope matches the selected profile. A generic pack request remains `full-library`; only an explicitly narrow request may omit categories.
 - Canonical names, audience, primary value, CTA, locale, and terminology are consistent.
 - Every consequential factual claim maps to a source or is visibly qualified.
 - Time-sensitive sources include retrieval dates; conflicts and inaccessible sources remain visible.
@@ -52,11 +52,12 @@ Apply common gates plus gates for selected modules before delivery and after pro
 
 ## Document gates
 
-- Title, version, date, mode, locale, owners, and source cutoff are visible.
-- Quick start distinguishes ready copy, production-ready briefs, delivered assets, and blockers.
-- Tables, links, copy, and asset states survived provider conversion.
-- Evidence ledger, asset matrix, gaps, and change log are present when applicable.
-- The external document was read back, or the verified Markdown master is clearly identified as the fallback.
+- The main document follows the [reference blueprint](reference-pack-blueprint.md) category order for every requested locale; missing media families have status and actionable briefs, not disappeared headings.
+- The first screen shows usable brand copy/assets and route/status, not a process ledger.
+- All requested copy rows contain real wording; required length variants have measured counts or an explained unmet constraint.
+- Each real visual/video has an accessible link or verified embed; each non-real item is visibly missing/proposed. No placeholder is presented as completed media.
+- Tables, links, copy, status labels, and requested locale headings survived provider conversion.
+- One editable online document was created and read back. Local Markdown alone is an incomplete default delivery; if the provider is blocked, state the blocker explicitly.
 
 ## Completion rule
 
