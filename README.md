@@ -154,7 +154,7 @@ Run the dependency-free repository checks:
 python3 scripts/validate_package.py
 ```
 
-The same check runs in GitHub Actions. It validates the public package limits, frontmatter, local links, placeholder hygiene, YAML/JSON syntax, banned media-generation capability tags, and exact parity between Aident action tags and [`loadout/metadata.json`](loadout/metadata.json).
+The same check runs in GitHub Actions. It validates public package limits, frontmatter, local links, placeholder hygiene, JSON metadata, banned media-generation capability tags, and exact parity between Aident action tags and [`loadout/metadata.json`](loadout/metadata.json). YAML parsing is also checked when PyYAML is installed; the deterministic Aident packager separately validates the complete package.
 
 ## License
 
