@@ -1,0 +1,27 @@
+schema_version: 1
+pack_version: 0.1.0
+generated_at: ""
+brand_name: ""
+
+assets: []
+
+# Add one record per deliverable using this shape:
+# - id: copy-linkedin-launch-01
+#   module: copy
+#   purpose: launch announcement
+#   audience: buyers
+#   channel: linkedin
+#   locale: en
+#   format: text
+#   dimensions_or_duration: ""
+#   status: proposed
+#   evidence_dependencies: []
+#   source_or_output: ""
+#   generation:
+#     model: ""
+#     settings: {}
+#     generated_at: ""
+#   qa:
+#     result: pending
+#     notes: ""
+#   reuse_notes: ""

@@ -1,0 +1,49 @@
+schema_version: 1
+
+brand:
+  name: Example Brand
+  official_urls:
+    - https://example.com
+  official_social_profiles: []
+  source_documents: []
+  primary_market: Singapore
+  primary_language: en
+
+request:
+  profile: copy-pack
+  mode: library
+  modules:
+    - core
+    - copy
+    - delivery
+  audiences:
+    - B2B product teams
+  channels:
+    - linkedin
+  locales:
+    - en
+  campaign_goal: Product launch
+  desired_action: Visit the product page
+  destination: local-markdown
+
+deliverables:
+  copy:
+    - company introduction
+    - launch post
+  images: []
+  videos: []
+
+constraints:
+  approved_claims: []
+  prohibited_claims: []
+  approved_terms: []
+  discouraged_terms: []
+  existing_visual_rules: []
+  generation_budget_approved: false
+  notes: Do not add other channels, images, or videos.
+
+run:
+  pack_version: 0.1.0
+  retrieval_date: ""
+  assumptions: []
+  unresolved_questions: []

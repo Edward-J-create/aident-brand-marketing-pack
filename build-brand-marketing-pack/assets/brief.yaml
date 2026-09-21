@@ -1,0 +1,42 @@
+schema_version: 1
+
+brand:
+  name: ""
+  official_urls: []
+  official_social_profiles: []
+  source_documents: []
+  primary_market: ""
+  primary_language: ""
+
+request:
+  profile: snapshot
+  mode: library
+  modules:
+    - core
+    - delivery
+  audiences: []
+  channels: []
+  locales: []
+  campaign_goal: ""
+  desired_action: ""
+  destination: local-markdown
+
+deliverables:
+  copy: []
+  images: []
+  videos: []
+
+constraints:
+  approved_claims: []
+  prohibited_claims: []
+  approved_terms: []
+  discouraged_terms: []
+  existing_visual_rules: []
+  generation_budget_approved: false
+  notes: ""
+
+run:
+  pack_version: 0.1.0
+  retrieval_date: ""
+  assumptions: []
+  unresolved_questions: []
