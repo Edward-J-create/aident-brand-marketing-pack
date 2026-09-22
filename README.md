@@ -2,7 +2,7 @@
 
 # Aident Brand Marketing Pack
 
-An open, cross-agent Skill for building a complete, editable brand marketing asset library from either an existing brand or a new brand idea. Its default document follows the category structure of the [Aident creator and influencer marketing pack]([redacted reference]), without copying that brand's content.
+An open, cross-agent Skill for building a complete, editable brand marketing asset library from either an existing brand or a new brand idea. Its default document follows the [anonymized reference-pack blueprint](aident-brand-marketing-pack/references/reference-pack-blueprint.md), without redistributing the source document's brand-specific content or media.
 
 It writes the actual copy. Existing approved images and videos are inventoried, embedded or linked where the provider allows; missing ones receive precise production briefs. It never pretends that a prompt, script, or storyboard is a finished file. By default the deliverable is a **verified editable Lark, Google Docs, or Notion document**, not merely local Markdown.
 

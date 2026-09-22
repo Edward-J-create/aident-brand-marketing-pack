@@ -21,6 +21,10 @@ ACTION_PATTERN = re.compile(r"<action-tag>([^<]+)</action-tag>")
 LOCAL_LINK_PATTERN = re.compile(r"\[[^\]]+\]\(([^)]+)\)")
 HTML_PATTERN = re.compile(r"<(?!/?action-tag\b)[A-Za-z][^>]*>")
 BANNED_MEDIA_ACTION_FRAGMENTS = ("fal_", "text_to_image", "text_to_video", "image_generation", "video_generation")
+PRIVATE_LARK_DOC_LINK_PATTERN = re.compile(
+    r"https?://[^\s)]+\.(?:larksuite\.com|feishu\.cn)/(?:docx|wiki)/[A-Za-z0-9]+",
+    flags=re.IGNORECASE,
+)
 REQUIRED_DEFAULT_MARKERS = (
     "`full-library`",
     "source-led",
@@ -133,6 +137,12 @@ def main() -> int:
                 resolved = (path.parent / clean_target).resolve()
                 if not resolved.exists():
                     fail(errors, f"Broken local link in {relative}: {target}")
+
+    for path in (ROOT / "README.md", *files):
+        if path.suffix.lower() not in ALLOWED_EXTENSIONS:
+            continue
+        if PRIVATE_LARK_DOC_LINK_PATTERN.search(path.read_text(encoding="utf-8")):
+            fail(errors, f"Public package contains a direct Lark document URL: {path.relative_to(ROOT)}")
 
     tags = sorted(set(ACTION_PATTERN.findall(skill_text)))
     references = sorted(ref.get("name") for ref in metadata.get("references", []))

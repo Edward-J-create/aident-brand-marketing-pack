@@ -1,6 +1,6 @@
 # Reference Pack Blueprint
 
-The target information architecture is modeled on the user-supplied [Aident Loadout Creator & Influencer Marketing Pack]([redacted reference]). Reuse its **category structure and granularity**, not Aident-specific product claims or media. This is the acceptance checklist for a default complete pack.
+This blueprint retains only the **generic category structure and granularity** of a user-supplied marketing pack. The original document URL, brand-specific copy, media links, account details, and identifiers are intentionally omitted from the public Skill. Use this anonymized checklist for a default complete pack; do not reconstruct or request the private source document when running the Skill.
 
 | Order | Document category | Required content / honest substitute |
 |---|---|---|

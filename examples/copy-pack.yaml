@@ -50,7 +50,7 @@ governance:
   notes: Do not add other channels, visuals, or videos.
 
 run:
-  pack_version: 0.3.1
+  pack_version: 0.3.2
   source_cutoff_date: ""
   assumptions: []
   unresolved_questions: []

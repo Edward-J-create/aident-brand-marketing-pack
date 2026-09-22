@@ -26,5 +26,5 @@
     {"type": "action", "name": "composio:notion_tools:notion_create_notion_page", "required": false},
     {"type": "action", "name": "composio:notion_tools:notion_get_page_markdown", "required": false}
   ],
-  "idempotencyKey": "aident-brand-marketing-pack-v3-1"
+  "idempotencyKey": "aident-brand-marketing-pack-v3-2"
 }

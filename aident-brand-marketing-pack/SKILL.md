@@ -3,7 +3,7 @@ name: aident-brand-marketing-pack
 description: Build a reference-shaped, bilingual-ready brand marketing asset library and deliver it as a verified editable Lark, Google Docs, or Notion document. Use with an existing brand name/logo/introduction/official URL, or with only a new brand idea. Write complete marketing copy, classify and link real media, and specify missing visual/video assets without pretending concepts are finished files.
 license: MIT
 metadata:
-  version: 0.3.1
+  version: 0.3.2
   author: Edward-J-create
   homepage: https://github.com/Edward-J-create/aident-brand-marketing-pack
   repository: https://github.com/Edward-J-create/aident-brand-marketing-pack
