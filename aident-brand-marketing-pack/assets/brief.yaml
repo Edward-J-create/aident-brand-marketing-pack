@@ -28,6 +28,8 @@ request:
   campaign_goal: ""
   desired_action: ""
   destination: auto-cloud-document # named provider or auto-cloud-document
+  media_delivery: final-files-first # high-quality finished exports, not editable source projects
+  media_destination: auto-companion-library # durable cloud storage beside the document when possible
 
 deliverables:
   copy: []
@@ -44,10 +46,11 @@ governance:
   discouraged_terms: []
   existing_visual_rules: []
   external_production_authorized: false
+  editable_source_handoff_requested: false
   notes: ""
 
 run:
-  pack_version: 0.3.2
+  pack_version: 0.4.0
   source_cutoff_date: ""
   assumptions: []
   unresolved_questions: []

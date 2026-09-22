@@ -29,6 +29,8 @@ request:
   campaign_goal: Product launch
   desired_action: Visit the product page
   destination: auto-cloud-document
+  media_delivery: final-files-first
+  media_destination: auto-companion-library
 
 deliverables:
   copy:
@@ -47,10 +49,11 @@ governance:
   discouraged_terms: []
   existing_visual_rules: []
   external_production_authorized: false
+  editable_source_handoff_requested: false
   notes: Do not add other channels, visuals, or videos.
 
 run:
-  pack_version: 0.3.2
+  pack_version: 0.4.0
   source_cutoff_date: ""
   assumptions: []
   unresolved_questions: []

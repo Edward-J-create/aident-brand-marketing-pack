@@ -1,7 +1,7 @@
 interface:
   display_name: "Aident Brand Marketing Pack"
-  short_description: "Build a reference-shaped brand pack in an editable online document."
-  default_prompt: "Use $aident-brand-marketing-pack to create a complete brand marketing asset library from my existing brand sources or a new brand idea. Write full copy, classify real and missing visual/video assets, and deliver a verified editable Lark, Google Docs, or Notion document. Do not claim unproduced media exists."
+  short_description: "Package brand copy and full-quality media results in an editable cloud document."
+  default_prompt: "Use $aident-brand-marketing-pack to create a complete brand marketing asset library from my existing brand sources or a new brand idea. Write full copy, collect permitted full-quality final image and video files, and deliver a verified editable Lark, Google Docs, or Notion document with durable companion media. Do not treat previews, source-page links, or editable design projects as default result files; label unproduced media honestly."
 
 policy:
   allow_implicit_invocation: true

@@ -1,5 +1,5 @@
 schema_version: 2
-pack_version: 0.3.2
+pack_version: 0.4.0
 updated_at: ""
 brand_name: ""
 
@@ -20,6 +20,19 @@ assets: []
 #   copy_dependencies: [copy-linkedin-launch-01]
 #   source_asset_dependencies: [logo-primary-light]
 #   source_or_output: ""
+#   source_page: "" # provenance; not a delivered result file
+#   final_result_file:
+#     source_url_or_id: ""
+#     filename: ""
+#     mime_type: ""
+#     bytes: null
+#     sha256: ""
+#     dimensions_or_duration: ""
+#     full_quality_verified: false
+#     durable_pack_url_or_id: ""
+#     audience_access_verified: false
+#     document_placement: ""
+#   editable_source_project: "" # optional, only if separately requested; never default pack output
 #   rights: approved-first-party
 #   owner: ""
 #   approval_owner: ""
