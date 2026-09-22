@@ -1,10 +1,10 @@
 # Video Asset Module
 
-Use this module to inventory existing footage and define production-ready video contracts. It produces concepts, scripts, copy, shot plans, and acceptance criteria; it does not generate, edit, animate, voice, or export a video.
+Use this module to inventory and package permitted existing footage and define production-ready video contracts. It produces concepts, scripts, copy, shot plans, and acceptance criteria; a separate authorized production workflow generates, edits, voices, or exports new video. Read [original-media-delivery.md](original-media-delivery.md) before labeling a video ready.
 
 ## Inventory existing assets
 
-Record source footage, product captures, interviews, testimonials, demos, animation projects, audio, music, voice tracks, captions, thumbnails, masters, and cutdowns. Capture owner, rights, release status, source quality, duration, aspect ratio, locale, editable project availability, and reuse limits.
+Record finished product captures, interviews, testimonials, demos, launch films, logo motion, captions, posters, masters, and cutdowns. Prefer an approved full-quality MP4/MOV export to a social stream or low-resolution preview. Capture the actual result file separately from its watch page, owner, rights, release status, size/hash when accessible, duration, resolution, aspect ratio, locale, durable pack location, and reuse limits. Editing timelines, animation projects, and raw source footage are not default pack deliverables; include them only in a separately requested source-file handoff. A YouTube/Vimeo playlist is not an inventory of verified video files; identify each relevant finished clip and its file availability.
 
 ## Video brief contract
 
@@ -41,4 +41,4 @@ Every shot must use one of:
 
 ## Acceptance baseline
 
-Fail the brief if duration or platform is unknown, a real product action lacks a capture source, copy is unapproved, rights are unresolved, or deliverables and review owner are missing. A storyboard is not a rendered video.
+Fail the brief if duration or platform is unknown, a real product action lacks a capture source, copy is unapproved, rights are unresolved, or deliverables and review owner are missing. A storyboard is not a rendered video. A finished video is ready in the pack only when its original export, rights, durable file location, intended-audience access, and document entry are verified; a streaming page or poster alone is reference-only.

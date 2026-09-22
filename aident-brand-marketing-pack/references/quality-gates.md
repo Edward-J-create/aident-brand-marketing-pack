@@ -10,6 +10,14 @@ Apply common gates plus gates for selected modules before delivery and after pro
 - Time-sensitive sources include retrieval dates; conflicts and inaccessible sources remain visible.
 - Asset IDs, dependencies, owner, rights, status, and source or output location are complete.
 - `delivered` is used only for an accessible external output, never for a prompt, concept, script, or brief.
+- A source page, ZIP URL, streaming playlist, temporary transfer URL, or small preview is not counted as an inspected original file. `existing` does not by itself mean ready to use.
+
+## Original-media gates
+
+- Every media item promised as ready has inspected original bytes, format, size/dimensions or duration, source provenance, rights for the stated use, a durable pack location, and a verified intended-audience access path. Compare a digest or file size with the source when the provider exposes it.
+- Full-quality finished image/vector files and final video masters/exports are retained where available. Display renditions link back to the final result file and are never mislabeled as it. Editable design or editing projects are excluded from the default pack unless the user explicitly requests a separate source-file handoff.
+- Media visible only on a public third-party website is `reference-only` or `website rendition only` until acquisition and reuse rights are established; it is not a cleared ad asset.
+- For requested finished media, a separate authorized production workflow returned and inspected the actual file before the pack is marked ready. Otherwise the result is an incomplete planning draft with the blocker named.
 
 ## Copy gates
 
@@ -55,10 +63,10 @@ Apply common gates plus gates for selected modules before delivery and after pro
 - The main document follows the [reference blueprint](reference-pack-blueprint.md) category order for every requested locale; missing media families have status and actionable briefs, not disappeared headings.
 - The first screen shows usable brand copy/assets and route/status, not a process ledger.
 - All requested copy rows contain real wording; required length variants have measured counts or an explained unmet constraint.
-- Each real visual/video has an accessible link or verified embed; each non-real item is visibly missing/proposed. No placeholder is presented as completed media.
+- Each real visual/video has a verified original-file location and a document entry. Images are displayed at useful quality when supported; video has a player or poster plus direct access to the original file. Each non-real item is visibly missing/proposed. No placeholder, source-page link, or thumbnail is presented as completed media.
 - Tables, links, copy, status labels, and requested locale headings survived provider conversion.
-- One editable online document was created and read back. Local Markdown alone is an incomplete default delivery; if the provider is blocked, state the blocker explicitly.
+- One editable online document was created and read back, and the companion original-file library was checked where applicable. Local Markdown or a link-only document is an incomplete default media delivery; if the provider is blocked, state the blocker explicitly.
 
 ## Completion rule
 
-Complete means the selected content and production contracts exist, their states are honest, and the editable master is verified. It does not mean requested media has been produced unless a separate production workflow returned accessible files that passed the frozen acceptance checks.
+Complete as a **ready-to-use pack** means selected copy and media exist, original files and rights are verified, and the editable document plus companion file library are accessible. A pack containing only source references and production contracts is a **planning draft**, even when its document is editable. Requested media are not produced unless a separate authorized workflow returned inspected files that passed acceptance checks.

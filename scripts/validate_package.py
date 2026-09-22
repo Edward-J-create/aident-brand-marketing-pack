@@ -32,6 +32,9 @@ REQUIRED_DEFAULT_MARKERS = (
     "one real editable cloud document",
     "reference-pack-blueprint.md",
     "document-delivery.md",
+    "original-media-delivery.md",
+    "full-quality result file",
+    "Layered design and editing projects are excluded from the default pack",
 )
 REQUIRED_PACK_SECTIONS = (
     "English Copy",
@@ -96,6 +99,17 @@ def main() -> int:
     brief_text = (PACKAGE / "assets" / "brief.yaml").read_text(encoding="utf-8")
     if "profile: full-library" not in brief_text or "destination: auto-cloud-document" not in brief_text:
         fail(errors, "Default brief must request the full library and an online document")
+    if "media_delivery: final-files-first" not in brief_text:
+        fail(errors, "Default brief must request full-quality final media files")
+    if "editable_source_handoff_requested: false" not in brief_text:
+        fail(errors, "Default brief must exclude editable source projects unless requested")
+    media_reference = PACKAGE / "references" / "original-media-delivery.md"
+    if not media_reference.is_file():
+        fail(errors, "Missing final-result media delivery reference")
+    else:
+        media_text = media_reference.read_text(encoding="utf-8")
+        if "finished result file" not in media_text or "5 MB" not in media_text:
+            fail(errors, "Media delivery must define final results and dynamic file-size handling")
     for path in (PACKAGE / "assets" / "brief.yaml", ROOT / "examples" / "copy-pack.yaml"):
         if "destination: local-markdown" in path.read_text(encoding="utf-8"):
             fail(errors, f"Default or example may not route to local Markdown: {path.relative_to(ROOT)}")

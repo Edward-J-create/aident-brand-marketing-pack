@@ -1,7 +1,7 @@
 {
   "schemaVersion": "0.1.0",
   "displayName": "Aident Brand Marketing Pack",
-  "summary": "Create a reference-shaped marketing asset library from existing brand sources or a new idea, with complete copy, honest media slots, and a verified editable online document.",
+  "summary": "Create a reference-shaped marketing pack with complete copy, permitted full-quality final image and video files, and a verified editable online document with durable companion media.",
   "language": "en",
   "category": "marketing",
   "tags": [
@@ -14,17 +14,24 @@
     "asset-governance",
     "visual-brief",
     "video-brief",
-    "editable-docs"
+    "editable-docs",
+    "final-media-files",
+    "source-led",
+    "idea-led"
   ],
   "references": [
     {"type": "action", "name": "cli:lark:create_document", "required": false},
     {"type": "action", "name": "cli:lark:fetch_document_markdown", "required": false},
     {"type": "action", "name": "cli:lark:insert_document_image", "required": false},
+    {"type": "action", "name": "cli:lark:upload_drive_file", "required": false},
     {"type": "action", "name": "composio:firecrawl_tools:firecrawl_extract", "required": false},
     {"type": "action", "name": "composio:googledocs_tools:googledocs_create_document_markdown", "required": false},
     {"type": "action", "name": "composio:googledocs_tools:googledocs_get_document_plaintext", "required": false},
+    {"type": "action", "name": "composio:googledocs_tools:googledocs_insert_inline_image", "required": false},
+    {"type": "action", "name": "composio:googledrive_tools:googledrive_upload_file", "required": false},
     {"type": "action", "name": "composio:notion_tools:notion_create_notion_page", "required": false},
+    {"type": "action", "name": "composio:notion_tools:notion_create_file_upload", "required": false},
     {"type": "action", "name": "composio:notion_tools:notion_get_page_markdown", "required": false}
   ],
-  "idempotencyKey": "aident-brand-marketing-pack-v3-2"
+  "idempotencyKey": "aident-brand-marketing-pack-v4-0"
 }

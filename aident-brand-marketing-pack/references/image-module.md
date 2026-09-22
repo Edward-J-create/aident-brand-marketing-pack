@@ -1,12 +1,14 @@
 # Visual Asset Module
 
-Use this module to inventory existing visuals and specify static marketing assets. It does not render, edit, or redesign media.
+Use this module to inventory and package permitted existing visuals, then specify missing static marketing assets. It does not render, edit, or redesign media. Read [original-media-delivery.md](original-media-delivery.md) before labeling an image ready.
 
 ## Inventory existing assets
 
-Capture logo source files and lockups, icons, product screenshots, photography, illustrations, diagrams, social posts, ad creative, decks, event graphics, templates, and prior exports. Record exact source, owner, rights, recency, editable-source availability, file type, dimensions when known, and reuse restrictions.
+Capture usable logo exports and lockups, icons, product screenshots, photography, illustrations, diagrams, social posts, ad creative, event graphics, and prior final exports. Prefer full-resolution finished PNG/JPEG/SVG files over website renditions. Record exact source page and actual result file separately, owner, rights, recency, MIME type, dimensions, size/hash when accessible, durable pack location, and reuse restrictions. Inspect each member of an official brand archive before claiming it contains a particular variant. Do not place PSD, AI, Figma, or other editable design projects in the default pack.
 
 Do not infer a logo variant, font license, partner lockup, or image right from appearance alone.
+
+The document may display a high-quality derivative when the provider cannot render a final SVG export, but the full-quality result file must remain available separately. If only a CDN thumbnail or resized image is accessible, label it `Website rendition only`, not a ready export. Do not publish a private file at a public URL just to satisfy an image-insertion API.
 
 ## Visual brief contract
 
@@ -49,4 +51,4 @@ Define source files, optical sizing, order, separator, monochrome fallback, mini
 
 ## Acceptance baseline
 
-Fail the brief if required copy, logo source, rights, dimensions, or approval owner is missing. A valid brief is `production-ready-brief`; it is never `delivered` until a separate workflow returns an inspected output.
+Fail the brief if required copy, logo source, rights, dimensions, or approval owner is missing. A valid brief is `production-ready-brief`; it is never `delivered` until a separate workflow returns an inspected output. An existing-image item is ready only when the original file, rights, durable location, and intended-audience access are verified; a source-page link alone is not enough.

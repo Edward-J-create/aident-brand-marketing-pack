@@ -16,6 +16,7 @@ Do not block these outputs because a connector is unavailable. Narrow the eviden
 | Read Lark, Google Docs, or Notion | Matching Aident read action | Native authenticated connector | Never infer inaccessible private content |
 | Create editable cloud document | Matching Aident create action, after current Vault check | Native provider action only when Aident is unavailable or cannot perform it | Create one native document and read it back; disclose any route change |
 | Insert existing approved image in Lark | Aident Lark image action | Native document image insertion | Preserve rights and source record; verify placement |
+| Store final result files | Matching Aident Drive, Lark, or Notion upload action | Native provider storage when Aident is unavailable | Keep full-quality PNG/JPEG/SVG and MP4/MOV exports; verify file identity and audience access; exclude editable projects by default |
 | Deliver locally | File write | Any host file tool | Verify the Markdown file exists and is readable |
 | Produce final media | Separate user-selected production workflow | Any authorized production Skill or tool | Use frozen brief; return outputs and QA; never run implicitly |
 
@@ -25,10 +26,11 @@ Equivalent tools are interchangeable only at the capability level. Inspect the l
 
 1. If public research is unavailable, use supplied material and mark unsupported external facts as unknown.
 2. If a private document is inaccessible, request an export or permission; do not reconstruct it from hints.
-3. If no cloud provider is writable, preserve the Markdown draft but mark online delivery incomplete and ask for a connection or explicit local-only change of scope.
-4. If read-back is unavailable, do not report cloud delivery as verified.
-5. If no production workflow is available, deliver the complete brief and label media as not produced.
-6. If files cannot persist, return complete Markdown in the conversation and disclose that neither an online document nor a durable local library was created.
+3. If no cloud provider is writable, preserve the Markdown draft and permitted final result files but mark online delivery incomplete and ask for a connection or explicit local-only change of scope.
+4. If the document is writable but no route can store the actual result files, mark media delivery incomplete; do not call a link-only document a ready pack.
+5. If read-back is unavailable, do not report cloud delivery as verified.
+6. If no production workflow is available, deliver the complete brief and label media as not produced.
+7. If files cannot persist, return complete Markdown in the conversation and disclose that neither an online document nor a durable local library was created.
 
 ## Host-specific metadata
 

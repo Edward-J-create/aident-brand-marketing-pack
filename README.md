@@ -4,14 +4,14 @@
 
 An open, cross-agent Skill for building a complete, editable brand marketing asset library from either an existing brand or a new brand idea. Its default document follows the [anonymized reference-pack blueprint](aident-brand-marketing-pack/references/reference-pack-blueprint.md), without redistributing the source document's brand-specific content or media.
 
-It writes the actual copy. Existing approved images and videos are inventoried, embedded or linked where the provider allows; missing ones receive precise production briefs. It never pretends that a prompt, script, or storyboard is a finished file. By default the deliverable is a **verified editable Lark, Google Docs, or Notion document**, not merely local Markdown.
+It writes the actual copy and packages permitted **full-quality finished image and video files**. The editable Lark, Google Docs, or Notion document displays those results where supported and points directly to durable companion files where needed. A source-page link, thumbnail, prompt, script, or storyboard is not a finished asset. **Editable PSD/AI/Figma projects and editing timelines are not included by default**; request a separate source-file handoff if needed.
 
 ## Two input routes
 
 | Route | User provides | Result |
 |---|---|---|
-| `source-led` | Brand name with introduction/logo, official URL/social profile, existing document, or assets | Source-grounded pack preserving real identity and linking approved assets |
-| `idea-led` | Product/brand idea without established identity or media | Proposed working brand, full copy and asset concepts, with nonexistent links/media clearly marked |
+| `source-led` | Brand name with introduction/logo, official URL/social profile, existing document, or assets | Source-grounded pack preserving real identity and collecting permitted full-quality finished media files |
+| `idea-led` | Product/brand idea without established identity or media | Proposed working brand and full copy; concepts remain clearly labeled until a separately authorized production workflow returns inspected final files |
 
 A generic request defaults to `full-library`. The document includes English copy, official links and social channels, brand assets, launch video, video clips, creative rules, platform templates, workflow ideas, accuracy guardrails, and Chinese copy/media when requested. An explicitly narrow request may use a focused profile.
 
@@ -25,23 +25,24 @@ FACT LEDGER ──► BRAND CORE ──► FINAL COPY
      │               │              │
      └───────────────┴──────► ASSET MANIFEST
                                       │
-                         ┌────────────┴────────────┐
-                         ▼                         ▼
-                   VISUAL BRIEFS              VIDEO BRIEFS
-                         │                         │
-                         └────────────┬────────────┘
+                       ┌──────────────┴──────────────┐
+                       ▼                             ▼
+            EXISTING FINAL FILES              MISSING-MEDIA BRIEFS
+                       │                             │
+                       │                  AUTHORIZED SEPARATE PRODUCTION
+                       │                             │
+                       └──────────────┬──────────────┘
                                       ▼
-                            EXTERNAL PRODUCTION
-                         (a separate Skill or tool)
+                      EDITABLE DOC + FINAL FILE LIBRARY
 ```
 
 | This Skill owns | A separate production Skill owns |
 |---|---|
 | Brand facts, positioning, message pillars, voice, terminology | Rendering and editing |
 | Final website, social, ad, email, event, partner, and video copy | Model or renderer selection |
-| Existing-asset inventory and rights state | Layout implementation and animation |
+| Existing final-file collection, rights state, and durable pack placement | Layout implementation and animation |
 | Visual and video briefs, prompts, scripts, shots, formats, safe areas | Working design or editing projects |
-| Asset IDs, dependencies, status, acceptance criteria, QA contract | Final exports and render inspection |
+| Asset IDs, dependencies, final-file inspection, pack integration, and delivery QA | Generation/rendering and production-side export QA |
 
 This split is intentional. Stable brand governance should not be coupled to a fast-changing image model, video generator, editor, or paid API.
 
@@ -58,7 +59,7 @@ This split is intentional. Stable brand governance should not be coupled to a fa
 | `full-library` | Default reference-shaped content and asset document |
 | `refresh` | Evidence-aware updates that preserve stable approvals |
 
-Operating modes are separate: `library` builds the source of truth, `handoff` freezes production contracts, and `refresh` revises only affected records. None of them renders media.
+Operating modes are separate: `library` builds the source of truth and collects finished media, `handoff` freezes production contracts, and `refresh` revises only affected records. This Skill does not render media itself; when the user asks for new finished media, it can coordinate a separate authorized workflow and package its inspected results.
 
 ## Why visual and video templates stay here
 
@@ -73,9 +74,12 @@ Actual Figma layouts, Canvas code, image-model recipes, motion components, editi
 - Short copy derives from one canonical narrative.
 - Visual and video copy remains independently reviewable.
 - Logo files, product UI, footage, rights, and approval ownership are explicit.
+- The default media payload is ready-to-use final exports (for example PNG/JPEG/SVG and MP4/MOV), not editable design or video projects.
+- An image or clip may be under 5 MB, but 5 MB is not a universal quality target or storage limit; inspect the actual file and provider cap.
 - Prompts, concepts, scripts, and storyboards are never labeled as delivered media.
 - Aident Loadout is the primary document route: check the current account, action, and Vault connection, create a native Lark Docx / Google Doc / Notion page, then read it back. Local Markdown is only a working backup.
 - A full pack does not silently collapse to copy-only because images or footage are missing.
+- A link-only document is a planning draft, not a ready media pack. Existing or newly produced media count as delivered only after the actual final file is inspected, durably stored, linked from the document, and access-checked.
 - Explicitly narrow requests stay narrow.
 
 ## Cross-agent installation
@@ -101,7 +105,7 @@ npx skills add Edward-J-create/aident-brand-marketing-pack \
 
 For manual installation, copy the complete package directory—not only `SKILL.md`—to the host's personal or project Skill directory. Hosts may ignore [`agents/openai.yaml`](aident-brand-marketing-pack/agents/openai.yaml); it is optional discovery metadata.
 
-The portable core can draft content from accessible inputs, but a default run is not complete until Aident Loadout creates and reads back an editable online document. Use a host-native connector only when Aident cannot perform the requested operation, and disclose the route change. A connected/readable Lark account may still lack app-level Docx creation scopes; in that case the Skill checks another connected provider if the user did not require Lark. If none can write, it reports online delivery incomplete rather than silently downgrading to a local file. Follow the [Aident Loadout setup instructions](https://aident.ai/SETUP.md) when a connection is needed.
+The portable core can draft content from accessible inputs, but a default run is not complete until Aident Loadout creates and reads back an editable online document **and verifies durable delivery of the actual final result files**. Use a host-native connector only when Aident cannot perform the requested operation, and disclose the route change. A connected/readable Lark account may still lack app-level Docx creation scopes; in that case the Skill checks another connected provider if the user did not require Lark. If none can write or hold the results, it reports delivery incomplete rather than silently downgrading to a local file or a page of source links. Follow the [Aident Loadout setup instructions](https://aident.ai/SETUP.md) when a connection is needed.
 
 ## Example requests
 
@@ -110,6 +114,8 @@ Use $aident-brand-marketing-pack to build the full marketing pack from our
 brand name, logo, introduction, and official website. Follow the reference
 category structure, use real existing assets, brief missing visuals/videos,
 and deliver one editable Lark document.
+Include the actual full-quality final image and video files where rights and access permit;
+do not include editable design or editing projects unless I request them separately.
 ```
 
 ```text
@@ -155,6 +161,7 @@ aident-brand-marketing-pack/
     ├── evidence-and-research.md
     ├── host-compatibility.md
     ├── image-module.md
+    ├── original-media-delivery.md
     ├── output-template.md
     ├── production-handoff.md
     ├── quality-gates.md

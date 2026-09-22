@@ -10,7 +10,7 @@ Choose the input route (`source-led` or `idea-led`) first, then the scope profil
 | `visual-kit` | core, copy when text is present, inventory, visual-spec, delivery | Selected static-asset briefs and all dependent copy |
 | `video-kit` | core, copy, inventory, video-spec, delivery | Selected video briefs, scripts, on-screen copy, and shot plans |
 | `campaign-kit` | core, copy, optional inventory, selected spec modules, delivery | One campaign system, not an evergreen library dump |
-| `full-library` | core, copy, inventory, visual-spec, video-spec, requested localization, delivery | Reference-shaped bilingual-ready document, actual media inventory, briefs for gaps, manifest and evidence appendix |
+| `full-library` | core, copy, inventory, visual-spec, video-spec, requested localization, delivery | Reference-shaped bilingual-ready document, collected full-quality final result files where available, briefs for gaps, manifest and evidence appendix |
 | `refresh` | affected modules, delivery | Diff-led update that preserves stable approvals |
 
 ## Granularity rules
@@ -27,7 +27,7 @@ Choose the input route (`source-led` or `idea-led`) first, then the scope profil
 
 ### Library
 
-Default. Create reusable copy, inventory records, and production briefs. No rendering or paid media calls.
+Default. Create reusable copy, inventory records, and production briefs; collect and deliver permitted existing full-quality final media files. Do not include editable design or editing projects by default. No rendering or paid media calls occur implicitly; if the user requests finished media that is missing, coordinate a separate authorized production workflow and add only its inspected final result files to the pack.
 
 ### Handoff
 
